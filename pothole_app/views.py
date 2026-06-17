@@ -74,6 +74,7 @@ def home(request):
             return render(request, 'index.html', context)
 
         r = results[0]
+        r.names = {k: 'Ổ gà' for k in r.names}
         boxes = r.boxes
         context['num_potholes'] = len(boxes) if boxes is not None else 0
 

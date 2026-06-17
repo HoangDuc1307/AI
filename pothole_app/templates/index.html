@@ -410,14 +410,14 @@
 
         {% if result_image %}
         <div class="image-card">
-          <div class="img-label">Sau khi detect</div>
+          <div class="img-label">Sau khi phát hiện</div>
           <img src="/media/{{ result_image }}" alt="Kết quả detect"/>
         </div>
         {% else %}
         <div class="image-card">
-          <div class="img-label">Sau khi detect</div>
+          <div class="img-label">Sau khi phát hiện</div>
           <div class="result-placeholder">
-            {% if error %}Xem thông báo lỗi phía trên và thử lại.{% else %}Chưa chạy detect.{% endif %}
+            {% if error %}Xem thông báo lỗi phía trên và thử lại.{% else %}Chưa chạy phát hiện.{% endif %}
           </div>
         </div>
         {% endif %}
