@@ -171,11 +171,19 @@
     .drop-zone p { color: var(--text-secondary); font-size: 15px; }
     .drop-zone p span { color: var(--accent-color); font-weight: 600; }
     .preview-img {
-      max-height: 200px;
+      max-width: 100%;
+      max-height: 300px;
       border-radius: 8px;
-      margin-top: 16px;
       box-shadow: var(--shadow-md);
       border: 1px solid var(--border-color);
+    }
+    .drop-zone.has-preview {
+      padding: 12px;
+      border-style: solid;
+      background: var(--bg-secondary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     /* BUTTON */
@@ -434,9 +442,11 @@
       if (!file) return;
       const reader = new FileReader();
       reader.onload = e => {
+        const zone = document.getElementById('dropZone');
         const img = document.getElementById('previewImg');
         img.src = e.target.result;
         img.style.display = 'block';
+        zone.classList.add('has-preview');
         document.querySelector('.drop-zone .icon').style.display = 'none';
         document.querySelector('.drop-zone p').style.display = 'none';
       };
